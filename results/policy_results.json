@@ -1,0 +1,1460 @@
+{
+  "dataset": "synthetic-pr-review-v1",
+  "case_count": 30,
+  "cost_matrix": {
+    "Merge": {
+      "Safe": 0,
+      "Minor Defect": 2,
+      "Major Defect": 100
+    },
+    "Request Human Review": {
+      "Safe": 1,
+      "Minor Defect": 1,
+      "Major Defect": 5
+    },
+    "Decline / Block": {
+      "Safe": 5,
+      "Minor Defect": 2,
+      "Major Defect": 0
+    }
+  },
+  "policies": {
+    "baseline": {
+      "cases": [
+        {
+          "case_id": "TC-01",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.02,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-02",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 3.24,
+          "action": "Request Human Review",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 1,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-03",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 5.91,
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 5,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-04",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.64,
+          "action": "Decline / Block",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-05",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 36.43,
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 5,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-06",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 1.33,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-07",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 1.72,
+          "action": "Request Human Review",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 1,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-08",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 8.82,
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-09",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.42,
+          "action": "Request Human Review",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 1,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-10",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 1.72,
+          "action": "Request Human Review",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 1,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-11",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 36.43,
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 5,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-12",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.26,
+          "action": "Request Human Review",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 1,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-13",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Large",
+            "Sensitivity": "Low",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 51.85,
+          "action": "Decline / Block",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-14",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 14.45,
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 5,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-15",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 3.82,
+          "action": "Decline / Block",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-16",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.02,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-17",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.26,
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 5,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-18",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 1.33,
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-19",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 5.91,
+          "action": "Request Human Review",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 1,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-20",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.02,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-21",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 76.96,
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-22",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.02,
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-23",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 5.91,
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 5,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-24",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.12,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-25",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 3.24,
+          "action": "Request Human Review",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 1,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-26",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 91.54,
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-27",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.12,
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-28",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.26,
+          "action": "Request Human Review",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 1,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-29",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 14.45,
+          "action": "Request Human Review",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 1,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-30",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 5.91,
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 5,
+          "is_error": true
+        }
+      ],
+      "confusion_matrix": {
+        "Safe": {
+          "Merge": 5,
+          "Request Human Review": 5,
+          "Decline / Block": 0
+        },
+        "Minor Defect": {
+          "Merge": 3,
+          "Request Human Review": 4,
+          "Decline / Block": 3
+        },
+        "Major Defect": {
+          "Merge": 0,
+          "Request Human Review": 7,
+          "Decline / Block": 3
+        }
+      },
+      "action_counts": {
+        "Merge": 8,
+        "Request Human Review": 16,
+        "Decline / Block": 6
+      },
+      "error_count": 18,
+      "human_review_rate": 0.5333,
+      "total_decision_cost": 56
+    },
+    "policy_a": {
+      "cases": [
+        {
+          "case_id": "TC-01",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.02,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-02",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 3.24,
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-03",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 5.91,
+          "action": "Merge",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 100,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-04",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.64,
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-05",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 36.43,
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 5,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-06",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 1.33,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-07",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 1.72,
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-08",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 8.82,
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 5,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-09",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.42,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-10",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 1.72,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-11",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 36.43,
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 5,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-12",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.26,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-13",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Large",
+            "Sensitivity": "Low",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 51.85,
+          "action": "Decline / Block",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-14",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 14.45,
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 5,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-15",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 3.82,
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-16",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.02,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-17",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.26,
+          "action": "Merge",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 100,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-18",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 1.33,
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-19",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 5.91,
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-20",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.02,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-21",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 76.96,
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-22",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.02,
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-23",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 5.91,
+          "action": "Merge",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 100,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-24",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.12,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-25",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 3.24,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-26",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 91.54,
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-27",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.12,
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-28",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.26,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-29",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 14.45,
+          "action": "Request Human Review",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 1,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-30",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 5.91,
+          "action": "Merge",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 100,
+          "is_error": true
+        }
+      ],
+      "confusion_matrix": {
+        "Safe": {
+          "Merge": 10,
+          "Request Human Review": 0,
+          "Decline / Block": 0
+        },
+        "Minor Defect": {
+          "Merge": 8,
+          "Request Human Review": 1,
+          "Decline / Block": 1
+        },
+        "Major Defect": {
+          "Merge": 4,
+          "Request Human Review": 4,
+          "Decline / Block": 2
+        }
+      },
+      "action_counts": {
+        "Merge": 22,
+        "Request Human Review": 5,
+        "Decline / Block": 3
+      },
+      "error_count": 17,
+      "human_review_rate": 0.1667,
+      "total_decision_cost": 439
+    },
+    "policy_b": {
+      "cases": [
+        {
+          "case_id": "TC-01",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.02,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-02",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 3.24,
+          "action": "Request Human Review",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 1,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-03",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 5.91,
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 5,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-04",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.64,
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-05",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 36.43,
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-06",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 1.33,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-07",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 1.72,
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-08",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 8.82,
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 5,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-09",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.42,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-10",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 1.72,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-11",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 36.43,
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-12",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.26,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-13",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Large",
+            "Sensitivity": "Low",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 51.85,
+          "action": "Decline / Block",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-14",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 14.45,
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 5,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-15",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 3.82,
+          "action": "Request Human Review",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 1,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-16",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.02,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-17",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.26,
+          "action": "Merge",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 100,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-18",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 1.33,
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-19",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 5.91,
+          "action": "Request Human Review",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 1,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-20",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.02,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-21",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 76.96,
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-22",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.02,
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-23",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 5.91,
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 5,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-24",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.12,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-25",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 3.24,
+          "action": "Request Human Review",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 1,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-26",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 91.54,
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-27",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.12,
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "TC-28",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 0.26,
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-29",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low"
+          },
+          "posterior_major_percent": 14.45,
+          "action": "Request Human Review",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 1,
+          "is_error": false
+        },
+        {
+          "case_id": "TC-30",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High"
+          },
+          "posterior_major_percent": 5.91,
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 5,
+          "is_error": true
+        }
+      ],
+      "confusion_matrix": {
+        "Safe": {
+          "Merge": 9,
+          "Request Human Review": 1,
+          "Decline / Block": 0
+        },
+        "Minor Defect": {
+          "Merge": 5,
+          "Request Human Review": 4,
+          "Decline / Block": 1
+        },
+        "Major Defect": {
+          "Merge": 1,
+          "Request Human Review": 5,
+          "Decline / Block": 4
+        }
+      },
+      "action_counts": {
+        "Merge": 15,
+        "Request Human Review": 10,
+        "Decline / Block": 5
+      },
+      "error_count": 13,
+      "human_review_rate": 0.3333,
+      "total_decision_cost": 142
+    }
+  }
+}

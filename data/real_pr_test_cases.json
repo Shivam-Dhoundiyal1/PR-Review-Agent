@@ -1,0 +1,387 @@
+[
+    {
+        "case_id": "PR-2813",
+        "title": "fix(agent): preserve quoted webhook command arguments",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "Low",
+            "Author": "High"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2811",
+        "title": "fix: fall back for oversized Claude token requests",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2809",
+        "title": "chore(deps): bump Python base image from 3.12.13 to 3.12.14",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2808",
+        "title": "chore(deps): Upgrade security dependencies",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2806",
+        "title": "fix(gitlab): strip sub-path prefix when parsing merge reques",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "Low"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2802",
+        "title": "fix(gitlab): restore ticket context in reviews",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "Low"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2801",
+        "title": "fix(bitbucket-server): preserve MOVE rename semantics in pul",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2797",
+        "title": "feat(review): make the review heading configurable",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2796",
+        "title": "feat(ask): resolve review threads via /ask_line",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2795",
+        "title": "fix(review): publish failure result for manual runs",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "Low",
+            "Author": "Low"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2794",
+        "title": "chore(deps): Upgrade LiteLLM to the latest stable v1.98.0",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2793",
+        "title": "fix(repo-context): propagate provider fetch errors",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2791",
+        "title": "fix(bitbucket): propagate repo context fetch errors",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2789",
+        "title": "fix(codecommit): include deleted files in review diffs",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "Low"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2788",
+        "title": "fix(review): remove stale progress comments",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "Low"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2786",
+        "title": "fix(azure): handle commits without changes",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2785",
+        "title": "fix(github): handle null GraphQL fields in fetch_sub_issues",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "Low"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2784",
+        "title": "fix: /ask on outdated review comments crashes with TypeError",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2780",
+        "title": "fix(gitea): strip the full /api/v1/repos prefix when parsing",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "Low"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2778",
+        "title": "chore: bump version from 0.41.0 to 0.43.0",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+        },
+        "actual_outcome": "Merged"
+    },
+    {
+        "case_id": "PR-2768",
+        "title": "fix(pr_agent/git_providers/bitbucket_provider.py): honouring",
+        "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+        },
+        "actual_outcome": "Closed_Without_Merge"
+    },
+    {
+        "case_id": "PR-2720",
+        "title": "fix(gitea): parse PR and issue URLs by shape rather than fix",
+        "evidence": {
+            "CI": "Fail",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "Low"
+        },
+        "actual_outcome": "Closed_Without_Merge"
+    },
+    {
+        "case_id": "PR-2715",
+        "title": "fix: rename stale unreviewed_files_set references in tests",
+        "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "Low"
+        },
+        "actual_outcome": "Closed_Without_Merge"
+    },
+    {
+        "case_id": "PR-2714",
+        "title": "test: rename stale unreviewed_files_set refs to unreviewed_f",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "Low"
+        },
+        "actual_outcome": "Closed_Without_Merge"
+    },
+    {
+        "case_id": "PR-2713",
+        "title": "test: fix stale unreviewed_files_set references to unreviewe",
+        "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "Low"
+        },
+        "actual_outcome": "Closed_Without_Merge"
+    },
+    {
+        "case_id": "PR-2712",
+        "title": "tests: use unreviewed_files_map in incremental test refs",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "Low"
+        },
+        "actual_outcome": "Closed_Without_Merge"
+    },
+    {
+        "case_id": "PR-2709",
+        "title": "fix(observability): support langfuse_otel in litellm handler",
+        "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "Low"
+        },
+        "actual_outcome": "Closed_Without_Merge"
+    },
+    {
+        "case_id": "PR-2706",
+        "title": "fix: compare the GitLab webhook shared secret in constant ti",
+        "evidence": {
+            "CI": "Fail",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "High"
+        },
+        "actual_outcome": "Closed_Without_Merge"
+    },
+    {
+        "case_id": "PR-2701",
+        "title": "fix: reset hunk state so deletion-only hunks are actually om",
+        "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+        },
+        "actual_outcome": "Closed_Without_Merge"
+    },
+    {
+        "case_id": "PR-2695",
+        "title": "fix: break the circular import between pr_agent.log and cust",
+        "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+        },
+        "actual_outcome": "Closed_Without_Merge"
+    },
+    {
+        "case_id": "PR-2681",
+        "title": "fix: avoid UnboundLocalError in the Anthropic token-count fa",
+        "evidence": {
+            "CI": "Fail",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High"
+        },
+        "actual_outcome": "Closed_Without_Merge"
+    },
+    {
+        "case_id": "PR-2673",
+        "title": "fix(deps): pin langfuse to 2.59.7 to match litellm constrain",
+        "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "Low"
+        },
+        "actual_outcome": "Closed_Without_Merge"
+    },
+    {
+        "case_id": "PR-2672",
+        "title": "feat: wire model backend to Atlara router",
+        "evidence": {
+            "CI": "Fail",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low"
+        },
+        "actual_outcome": "Closed_Without_Merge"
+    },
+    {
+        "case_id": "PR-2671",
+        "title": "Feature/cli agent handler",
+        "evidence": {
+            "CI": "Fail",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low"
+        },
+        "actual_outcome": "Closed_Without_Merge"
+    },
+    {
+        "case_id": "PR-2645",
+        "title": "test",
+        "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High"
+        },
+        "actual_outcome": "Closed_Without_Merge"
+    }
+]

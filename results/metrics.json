@@ -1,0 +1,63 @@
+{
+  "dataset": "synthetic-pr-review-v1",
+  "case_count": 30,
+  "policies": {
+    "baseline": {
+      "binary_definition": {
+        "positive_actual": "Minor Defect or Major Defect",
+        "positive_prediction": "Request Human Review or Decline / Block"
+      },
+      "binary_confusion_matrix": {
+        "true_positive": 17,
+        "true_negative": 5,
+        "false_positive": 5,
+        "false_negative": 3
+      },
+      "precision_unsafe": 0.7727,
+      "recall_unsafe": 0.85,
+      "false_positive_quantity": 5,
+      "false_negative_quantity": 3,
+      "human_review_rate": 0.5333,
+      "total_decision_cost": 56,
+      "major_defect_brier_score": 0.212674
+    },
+    "policy_a": {
+      "binary_definition": {
+        "positive_actual": "Minor Defect or Major Defect",
+        "positive_prediction": "Request Human Review or Decline / Block"
+      },
+      "binary_confusion_matrix": {
+        "true_positive": 8,
+        "true_negative": 10,
+        "false_positive": 0,
+        "false_negative": 12
+      },
+      "precision_unsafe": 1.0,
+      "recall_unsafe": 0.4,
+      "false_positive_quantity": 0,
+      "false_negative_quantity": 12,
+      "human_review_rate": 0.1667,
+      "total_decision_cost": 439,
+      "major_defect_brier_score": 0.212674
+    },
+    "policy_b": {
+      "binary_definition": {
+        "positive_actual": "Minor Defect or Major Defect",
+        "positive_prediction": "Request Human Review or Decline / Block"
+      },
+      "binary_confusion_matrix": {
+        "true_positive": 14,
+        "true_negative": 9,
+        "false_positive": 1,
+        "false_negative": 6
+      },
+      "precision_unsafe": 0.9333,
+      "recall_unsafe": 0.7,
+      "false_positive_quantity": 1,
+      "false_negative_quantity": 6,
+      "human_review_rate": 0.3333,
+      "total_decision_cost": 142,
+      "major_defect_brier_score": 0.212674
+    }
+  }
+}
