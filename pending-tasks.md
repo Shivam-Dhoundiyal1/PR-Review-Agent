@@ -1,6 +1,6 @@
 # Pending Tasks: PR Review Agent
 
-This file tracks the remaining work for the Week 1 project. Complete the tasks in order because later tasks depend on earlier decisions and evidence.
+This file tracks the remaining work for the project. Complete the tasks in order because later tasks depend on earlier decisions and evidence.
 
 ## Current Project Status
 
@@ -20,6 +20,24 @@ This file tracks the remaining work for the Week 1 project. Complete the tasks i
 
 The fetched dataset currently labels cases as `Merged` or `Closed_Without_Merge`. These are outcomes, not verified hidden defect states. The evaluation needs defensible labels such as `Safe`, `Minor Defect`, or `Major Defect`, or a clearly documented and justified proxy label.
 
+## Evidence Still Required
+
+| Requirement | Current status | Required update |
+| :--- | :--- | :--- |
+| One specific problem statement | Partially complete | State the final problem as: “The agent observes PR evidence and selects merge, human review, or block because the true defect state is hidden.” |
+| Agent design | Partially complete | Add the final input schema, hidden states, actions, human reasoning function, feedback, and conditions for asking a human. |
+| Public discussions | Incomplete | Add one more verified community, the second contribution for every community, five discussions with two or more replies, and dates or screenshots/archives where needed. |
+| Design updates from discussions | Unverified | For each accepted suggestion, link the exact human response and name the corresponding code, data, or policy change. Record rejected suggestions and reasons too. |
+| Test cases | Partially complete | The repository has 15 synthetic cases and 35 fetched PR records. Confirm the labels and split; the fetched `actual_outcome` is merge/closed, not the hidden defect state needed to evaluate defect detection. |
+| Hidden actual result | Missing | Add a defensible `actual_state` label such as Safe, Minor Defect, or Major Defect, using documented human labels or a reproducible proxy. Keep labels unavailable to the decision function until evaluation. |
+| Baseline and two policies | Partially complete | The code defines a rule baseline, Bayesian Policy A, and cautious Policy B. Document what each policy tests and evaluate all three on the same labeled cases. |
+| Metrics | Missing | Calculate confusion matrix, precision, recall, false-positive and false-negative quantities, human-review rate, decision cost, and calibration where labels support them. |
+| Five wrong decisions | Missing | Select five misclassified cases, give each a failure-condition name, explain the cause, and calculate its cost. Identify the highest-cost error. |
+| Reproducibility | Missing | Add a script or notebook that saves per-case evidence, hidden label, posterior, actions for all three policies, costs, and aggregate metrics. Add exact run instructions to `README.md`. |
+| Probability decision record | Partially complete | Add the full posterior vector, audit metadata, source of estimates, and a second-evidence update with a new action. |
+| AI reviews | Missing | Complete three reviews and record accepted/rejected comments, changes, and evidence in `review-record.md`. |
+| Preprint and publication | Missing | Create and compile the LaTeX paper, add references/figures, AI-use and contribution statements, and prepare the required LinkedIn and X materials. |
+
 ## Priority Order
 
 ### 1. Finalize the agent specification
@@ -34,7 +52,7 @@ Status: Incomplete
 - Add one human-reasoning function, such as identifying uncertainty or sending high-cost cases to a human.
 - Resolve inconsistent thresholds and terminology across `README.md`, `src/main.py`, and the probability decision record.
 
-Deliverable: Updated `README.md` and consistent code/design terminology.
+Output: Updated `README.md` and consistent code/design terminology.
 
 ### 2. Create valid labeled test cases
 
@@ -47,7 +65,7 @@ Status: Complete
 - Keep the labels separate from the agent decision function during prediction.
 - Record the dataset version and date.
 
-Deliverable: A reproducible labeled dataset with evidence and hidden ground truth.
+Output: A reproducible labeled dataset with evidence and hidden ground truth.
 
 ### 3. Implement the experiment
 
@@ -59,7 +77,7 @@ Status: Complete
 - Make sure the agent does not read `actual_state` before making its decision.
 - Add a fixed random seed if sampling or simulation is used.
 
-Deliverable: Per-case prediction results saved under `results/`.
+Output: Per-case prediction results saved under `results/`.
 
 ### 4. Calculate evaluation metrics
 
@@ -76,7 +94,7 @@ Calculate the applicable measurements for each of the three policies:
 - Decision cost using the project cost matrix.
 - Calibration of predicted probabilities, if enough labeled cases are available.
 
-Deliverable: A results table and a short interpretation in `README.md`.
+Output: A results table and a short interpretation in `README.md`.
 
 ### 5. Analyze five incorrect decisions
 
@@ -89,7 +107,7 @@ Status: Complete
 - Identify which error has the highest cost and explain why.
 - State one design change that could reduce each failure.
 
-Deliverable: Failure analysis in `README.md` and/or `results/failure-analysis.md`.
+Output: Failure analysis in `README.md` and/or `results/failure-analysis.md`.
 
 ### 6. Complete the probability decision record
 
@@ -103,7 +121,7 @@ Status: Complete
 - Compare the new posterior with the threshold and record the new action.
 - Add audit metadata: timestamp, dataset version, model version, and policy version.
 
-Deliverable: Completed `decisions/probability-decision-record.md`.
+Output: Completed `decisions/probability-decision-record.md`.
 
 ### 7. Complete real discussion evidence
 
@@ -117,7 +135,7 @@ Status: Next
 - Record whether each discussion caused a new assumption, failure condition, test, design change, or no change.
 - Do not invent human replies or claim a change that is not reflected in the code or design.
 
-Deliverable: Completed `discussion-record.md`.
+Output: Completed `discussion-record.md`.
 
 ### 8. Update the design using discussion findings
 
@@ -128,7 +146,7 @@ Status: Partially complete
 - Update the agent, probabilities, costs, test cases, or policy where justified.
 - Record the before-and-after design change.
 
-Deliverable: Evidence-linked design changes in `README.md` and `discussion-record.md`.
+Output: Evidence-linked design changes in `README.md` and `discussion-record.md`.
 
 ### 9. Complete AI review records
 
@@ -142,7 +160,7 @@ Complete three different reviews:
 
 For each important comment, record the AI tool, comment, accept/reject decision, reason, resulting change, and evidence.
 
-Deliverable: Completed `review-record.md`.
+Output: Completed `review-record.md`.
 
 ### 10. Write and verify the preprint
 
@@ -155,7 +173,7 @@ Status: Missing
 - Add the AI-use statement and contribution statement.
 - Compile the PDF successfully.
 
-Deliverable: `paper/main.tex`, `paper/references.bib`, figures, and `paper/preprint.pdf`.
+Output: `paper/main.tex`, `paper/references.bib`, figures, and `paper/preprint.pdf`.
 
 ### 11. Prepare publication materials
 
@@ -165,7 +183,7 @@ Status: Missing
 - Write the X thread containing the problem, test, result, and open question.
 - Publish only after the evidence and PDF are verified.
 
-Deliverable: `social/linkedin-post.md` and `social/x-thread.md`.
+Output: `social/linkedin-post.md` and `social/x-thread.md`.
 
 ### 12. Final quality check
 
@@ -176,7 +194,7 @@ Status: Not started
 - Run the experiment from a clean state using the README instructions.
 - Confirm all required files exist.
 - Confirm every reported number matches the saved results.
-- Complete the assignment checklist in the course instructions.
+- Complete the final project checklist and verify the documentation.
 
 ## Recommended Next Task
 

@@ -9,36 +9,8 @@
 
 ---
 
-## Assignment audit
+## Evidence audit
 
-This record contains four Reddit entries. The assignment requires at least five relevant communities, two contributions in each community, and five discussions with two or more replies. Complete the table with the second contribution, reply evidence, dates, and exact links. Do not mark a requirement complete unless the original post or comment and the human reply can be checked.
+This record contains four Reddit entries. The project evidence review requires at least five relevant communities, two contributions in each community, and five discussions with two or more replies. Complete the table with the second contribution, reply evidence, dates, and exact links. Do not mark an evidence item complete unless the original post or comment and the human reply can be checked.
 
 The design changes recorded above need supporting evidence from the original discussions. The record mentions Bayesian updating, path sensitivity, author trust, and API-rate-limit changes, but the current `src/main.py` does not implement ETag requests, GraphQL batching, or a separate author-trust prior beyond its likelihood table. Verify each claim against the code before treating it as a completed design change.
-
-## Evidence still required
-
-| Requirement | Current status | Required update |
-| :--- | :--- | :--- |
-| One specific problem statement | Partially complete | State the final problem as: “The agent observes PR evidence and selects merge, human review, or block because the true defect state is hidden.” |
-| Agent design | Partially complete | Add the final input schema, hidden states, actions, human reasoning function, feedback, and conditions for asking a human. |
-| Public discussions | Incomplete | Add one more verified community, the second contribution for every community, five discussions with two or more replies, and dates or screenshots/archives where needed. |
-| Design updates from discussions | Unverified | For each accepted suggestion, link the exact human response and name the corresponding code, data, or policy change. Record rejected suggestions and reasons too. |
-| Test cases | Partially complete | The repository has 15 synthetic cases and 35 fetched PR records. Confirm the labels and split; the fetched `actual_outcome` is merge/closed, not the hidden defect state needed to evaluate defect detection. |
-| Hidden actual result | Missing | Add a defensible `actual_state` label such as Safe, Minor Defect, or Major Defect, using documented human labels or a reproducible proxy. Keep labels unavailable to the decision function until evaluation. |
-| Baseline and two policies | Partially complete | The code defines a rule baseline, Bayesian Policy A, and cautious Policy B. Document what each policy tests and evaluate all three on the same labeled cases. |
-| Metrics | Missing | Calculate confusion matrix, precision, recall, false-positive and false-negative quantities, human-review rate, decision cost, and calibration where labels support them. |
-| Five wrong decisions | Missing | Select five misclassified cases, give each a failure-condition name, explain the cause, and calculate its cost. Identify the highest-cost error. |
-| Reproducibility | Missing | Add a script or notebook that saves per-case evidence, hidden label, posterior, actions for all three policies, costs, and aggregate metrics. Add exact run instructions to `README.md`. |
-| Probability decision record | Partially complete | Add the full posterior vector, audit metadata, source of estimates, and a second-evidence update with a new action. |
-| AI reviews | Missing | Complete three reviews and record accepted/rejected comments, changes, and evidence in `review-record.md`. |
-| Preprint and publication | Missing | Create and compile the LaTeX paper, add references/figures, AI-use and contribution statements, and prepare the required LinkedIn and X materials. |
-
-## Current policy definitions
-
-| Policy | Rule | Purpose |
-| :--- | :--- | :--- |
-| Baseline | Block failed CI; otherwise review high-sensitivity or large changes; merge the rest. | A simple operational rule for comparison. |
-| Policy A | Use the Bayesian major-defect posterior: merge below 8%, human review from 8% through 45%, and block above 45%. | Test whether calibrated risk and asymmetric costs improve decisions. |
-| Policy B | Use the same posterior: merge below 2%, human review from 2% through 20%, and block above 20%. | Test a more cautious policy that should reduce unsafe merges at the cost of more human work. |
-
-These policies are not enough by themselves: the experiment must show their predictions against hidden labels. Actions without labeled comparison cannot produce precision, recall, false positives, false negatives, or decision cost.

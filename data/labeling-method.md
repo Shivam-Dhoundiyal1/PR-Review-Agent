@@ -2,7 +2,7 @@
 
 ## Dataset
 
-`labeled_test_cases.json` contains 30 synthetic PR-review cases. This satisfies the assignment requirement for 30 to 50 labeled or simulated cases.
+`labeled_test_cases.json` contains 30 synthetic PR-review cases. This has 30 to 50 labeled or simulated cases.
 
 ## Observable evidence
 
@@ -32,7 +32,7 @@ The labels are not generated from the agent's posterior or action. The evaluatio
 - Dataset version: `synthetic-pr-review-v1`
 - Case count: 30
 - Label classes: Safe, Minor Defect, Major Defect
-- Label source: Scenario ground truth designed for this course experiment
+- Label source: Scenario ground truth designed for this experiment
 - Real-world status: Simulated; not evidence of actual repository defect rates
 - Creation date: 2026-09-04
 

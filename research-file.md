@@ -113,7 +113,7 @@ r/cybersecurity — Focuses on pipeline security and high-cost deployment failur
 
 ### AI prompts and important AI errors
 
-**Prompt** I gave the AI prompt with the week 1 deliverable content
+**Prompt** I gave the AI prompt with the task which Im working on.
 
 **Error** I understood that we have to automate the reddit, x discussion and based on those dicussion change our belief and design of the system.
 

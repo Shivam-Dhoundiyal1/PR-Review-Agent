@@ -50,7 +50,7 @@ The agent observes four key evidence variables:
 
 ### Estimate Justification
 
-The priors and likelihoods are controlled assumptions for this course simulation. Their purpose is to create an explicit belief model that can be tested and revised. They were selected so that passing CI generally supports safety, failed CI supports defect risk, large diffs increase uncertainty, sensitive paths increase major-defect risk, and author history provides a weak trust signal. They are not claims about the actual defect rates of a repository.
+The priors and likelihoods are controlled assumptions for this project benchmark. Their purpose is to create an explicit belief model that can be tested and revised. They were selected so that passing CI generally supports safety, failed CI supports defect risk, large diffs increase uncertainty, sensitive paths increase major-defect risk, and author history provides a weak trust signal. They are not claims about the actual defect rates of a repository.
 
 ---
 
@@ -79,6 +79,14 @@ Units represent relative developer hours & incident costs lost:
 
 ### Decision Policy Thresholds
 Because merging a $S_3$ (Major Defect) has an asymmetric cost ($100$), the policy is strictly calibrated around $P(S_3 \mid E)$, the posterior risk of a major defect:
+
+| Policy | Rule | Purpose |
+| :--- | :--- | :--- |
+| Baseline | Block failed CI; otherwise review high-sensitivity or large changes; merge the rest. | A simple operational rule for comparison. |
+| Policy A | Use the Bayesian major-defect posterior: merge below 8%, human review from 8% through 45%, and block above 45%. | Test whether calibrated risk and asymmetric costs improve decisions. |
+| Policy B | Use the same posterior: merge below 2%, human review from 2% through 20%, and block above 20%. | Test a more cautious policy that should reduce unsafe merges at the cost of more human work. |
+
+These policies must be evaluated against hidden labels. Actions without labeled comparison cannot produce precision, recall, false positives, false negatives, or decision cost.
 
 $$\text{Action}(E) = \begin{cases}
 \text{Merge } (A_1) & \text{if } P(S_3 \mid E) < 0.08 \\
