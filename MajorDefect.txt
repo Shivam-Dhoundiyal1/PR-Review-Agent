@@ -1,0 +1,14 @@
+WHy we used labeled data set and not actual PR data?
+We have to compare the agent result with actual state
+and The problem is that Merged 
+does not mean Safe, and Closed_Without_Merge does not mean 
+Major Defect. A PR may be closed for many unrelated reasons.
+
+
+
+Posteriror Uncertainity 
+
+When the evidence are in opposite direction and does not support 
+each other like CI is passed but file diff is large and files
+tocuhed are risky then it will ask for human review coz the agent
+is not confident wheater to merge or to reject

@@ -10,6 +10,20 @@ The agent observes pull-request evidence and selects **Merge**, **Request Human 
 
 The agent observes CI status, diff scope, file sensitivity, and author history. It estimates beliefs over Safe, Minor Defect, and Major Defect, then selects one of the three actions. It requests human review when the posterior is uncertain or the cost of an incorrect merge is high. Human review or later testing supplies feedback that is recorded for future analysis of the model and policy. The hidden state is not supplied to the agent before its initial action.
 
+### Design Versions
+
+**Agent V0** is the evaluated design documented in this record: CI status, diff scope, file sensitivity, and author history feed the Bayesian model, while Baseline, Policy A, and Policy B select the action. The current benchmark results use V0.
+
+**Agent V1** records accepted qualitative feedback from the Reddit discussions without changing the V0 benchmark policies:
+
+- Author history should be conditioned on domain familiarity; general experience may not transfer to infrastructure or other high-risk work.
+- CI should eventually include reliability or flaky-test history rather than treating every result as equally informative.
+- Review latency, revert rate, and filtered review-comment signals are candidate features for future labeled experiments.
+- An LLM may extract or explain evidence, but it must not rewrite the Bayesian posterior or final action.
+- GitHub collection should use caching, ETag requests, `Retry-After` handling, and exponential backoff to reduce API-rate-limit risk. These safeguards concern data collection and are not probability evidence.
+
+The V1 candidates are not assigned new likelihoods or priors yet because the discussion provides qualitative suggestions, not an independently labeled dataset. Baseline, Policy A, and Policy B remain unchanged for comparability.
+
 ### Hidden States ($S$)
 We define three mutually exclusive hidden states representing the true quality of a Pull Request in production:
 * **$S_1$ (Safe):** Code functions correctly, introduces no regressions, and meets security standards.
@@ -170,3 +184,39 @@ The major-defect probability increases from 3.24% to 48.28%. Since 48.28% is abo
 | Evidence used before initial action | CI, scope, sensitivity, author history |
 | Hidden state available before initial action | No |
 | Feedback event | CI failure observed after the initial decision |
+
+---
+
+## 8. V1 Expanded Evidence and Evaluation
+
+V1 is a separate exploratory model. It keeps the V0 Baseline, Policy A, and Policy B thresholds unchanged while adding these evidence fields to the separate dataset `data/v1_labeled_test_cases.json`:
+
+| Evidence field | Allowed values | Purpose |
+| :--- | :--- | :--- |
+| `CIReliability` | `Stable`, `Flaky` | Distinguishes reliable CI from a noisy test history. |
+| `AuthorDomain` | `Match`, `Mismatch` | Prevents general author experience from automatically transferring across technical domains. |
+| `ReviewLatency` | `Short`, `Long` | Represents how long prior changes typically remain under review. |
+| `RevertRate` | `Low`, `High` | Represents the author's or change area's prior reversion pattern. |
+| `ReviewComments` | `Clean`, `Actionable`, `Noisy` | Uses filtered review history rather than raw bot or resolved comment counts. |
+
+The original V0 fields remain in the V1 evidence: `CI`, `Scope`, `Sensitivity`, and `Author`. V1 uses provisional likelihoods in `src/v1_main.py`; these are modeling assumptions, not recalibrated production probabilities. The V1 hidden labels are inherited from the synthetic V0 scenarios, so V1 is an exploratory comparison rather than independent validation.
+
+### V1 Cost Matrix
+
+| Action | Safe | Minor Defect | Major Defect |
+| :--- | ---: | ---: | ---: |
+| Merge | 0 | 3 | 120 |
+| Request Human Review | 2 | 2 | 8 |
+| Decline / Block | 6 | 3 | 0 |
+
+The V1 matrix assigns a higher relative cost to merging a major defect and reflects the added cost assumptions for review and blocking. V0 and V1 total costs are not directly comparable because their matrices differ.
+
+### V1 Results
+
+| Policy | Precision | Recall | False positives | False negatives | Human-review rate | Decision cost |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Baseline | 77.27% | 85.00% | 5 | 3 | 53.33% | 92 |
+| Policy A | 100.00% | 40.00% | 0 | 12 | 16.67% | 421 |
+| Policy B | 100.00% | 50.00% | 0 | 10 | 10.00% | 276 |
+
+The full multiclass confusion matrices, binary confusion matrices, per-case posterior vectors, and major-defect Brier scores are saved in `results/v1_metrics.json` and `results/v1_policy_results.json`.

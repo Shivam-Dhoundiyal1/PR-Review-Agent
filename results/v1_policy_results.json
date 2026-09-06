@@ -1,0 +1,2361 @@
+{
+  "dataset": "synthetic-pr-review-v1-expanded",
+  "case_count": 30,
+  "model_version": "bayesian-pr-agent-v1",
+  "cost_matrix": {
+    "Merge": {
+      "Safe": 0,
+      "Minor Defect": 3,
+      "Major Defect": 120
+    },
+    "Request Human Review": {
+      "Safe": 2,
+      "Minor Defect": 2,
+      "Major Defect": 8
+    },
+    "Decline / Block": {
+      "Safe": 6,
+      "Minor Defect": 3,
+      "Major Defect": 0
+    }
+  },
+  "policies": {
+    "baseline": {
+      "cases": [
+        {
+          "case_id": "V1-TC-01",
+          "source_case_id": "TC-01",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 99.33,
+            "Minor Defect": 0.67,
+            "Major Defect": 0.0
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-02",
+          "source_case_id": "TC-02",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 84.56,
+            "Minor Defect": 15.21,
+            "Major Defect": 0.23
+          },
+          "action": "Request Human Review",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-03",
+          "source_case_id": "TC-03",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Mismatch",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 10.47,
+            "Minor Defect": 57.51,
+            "Major Defect": 32.02
+          },
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 8,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-04",
+          "source_case_id": "TC-04",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Flaky",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Noisy"
+          },
+          "posterior": {
+            "Safe": 81.85,
+            "Minor Defect": 17.49,
+            "Major Defect": 0.66
+          },
+          "action": "Decline / Block",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-05",
+          "source_case_id": "TC-05",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Mismatch",
+            "ReviewLatency": "Long",
+            "RevertRate": "Low",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 7.71,
+            "Minor Defect": 51.82,
+            "Major Defect": 40.47
+          },
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 8,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-06",
+          "source_case_id": "TC-06",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 91.73,
+            "Minor Defect": 8.25,
+            "Major Defect": 0.02
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-07",
+          "source_case_id": "TC-07",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 86.86,
+            "Minor Defect": 13.02,
+            "Major Defect": 0.12
+          },
+          "action": "Request Human Review",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-08",
+          "source_case_id": "TC-08",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 95.57,
+            "Minor Defect": 4.32,
+            "Major Defect": 0.1
+          },
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-09",
+          "source_case_id": "TC-09",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 97.37,
+            "Minor Defect": 2.63,
+            "Major Defect": 0.0
+          },
+          "action": "Request Human Review",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-10",
+          "source_case_id": "TC-10",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 95.68,
+            "Minor Defect": 4.3,
+            "Major Defect": 0.02
+          },
+          "action": "Request Human Review",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-11",
+          "source_case_id": "TC-11",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Flaky",
+            "AuthorDomain": "Mismatch",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 0.26,
+            "Minor Defect": 10.88,
+            "Major Defect": 88.86
+          },
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 8,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-12",
+          "source_case_id": "TC-12",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 98.67,
+            "Minor Defect": 1.33,
+            "Major Defect": 0.0
+          },
+          "action": "Request Human Review",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-13",
+          "source_case_id": "TC-13",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Large",
+            "Sensitivity": "Low",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Noisy"
+          },
+          "posterior": {
+            "Safe": 29.69,
+            "Minor Defect": 53.73,
+            "Major Defect": 16.58
+          },
+          "action": "Decline / Block",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-14",
+          "source_case_id": "TC-14",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 61.69,
+            "Minor Defect": 36.99,
+            "Major Defect": 1.32
+          },
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 8,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-15",
+          "source_case_id": "TC-15",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Flaky",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Noisy"
+          },
+          "posterior": {
+            "Safe": 56.29,
+            "Minor Defect": 40.08,
+            "Major Defect": 3.63
+          },
+          "action": "Decline / Block",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-16",
+          "source_case_id": "TC-16",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 99.33,
+            "Minor Defect": 0.67,
+            "Major Defect": 0.0
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-17",
+          "source_case_id": "TC-17",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Mismatch",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 40.39,
+            "Minor Defect": 55.49,
+            "Major Defect": 4.12
+          },
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 8,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-18",
+          "source_case_id": "TC-18",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 91.73,
+            "Minor Defect": 8.25,
+            "Major Defect": 0.02
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-19",
+          "source_case_id": "TC-19",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Long",
+            "RevertRate": "Low",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 64.92,
+            "Minor Defect": 33.31,
+            "Major Defect": 1.77
+          },
+          "action": "Request Human Review",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-20",
+          "source_case_id": "TC-20",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 99.33,
+            "Minor Defect": 0.67,
+            "Major Defect": 0.0
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-21",
+          "source_case_id": "TC-21",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 1.47,
+            "Minor Defect": 27.6,
+            "Major Defect": 70.93
+          },
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-22",
+          "source_case_id": "TC-22",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Flaky",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Noisy"
+          },
+          "posterior": {
+            "Safe": 93.99,
+            "Minor Defect": 5.99,
+            "Major Defect": 0.02
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-23",
+          "source_case_id": "TC-23",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Mismatch",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 10.47,
+            "Minor Defect": 57.51,
+            "Major Defect": 32.02
+          },
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 8,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-24",
+          "source_case_id": "TC-24",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 97.8,
+            "Minor Defect": 2.2,
+            "Major Defect": 0.0
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-25",
+          "source_case_id": "TC-25",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 94.84,
+            "Minor Defect": 5.12,
+            "Major Defect": 0.04
+          },
+          "action": "Request Human Review",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-26",
+          "source_case_id": "TC-26",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 0.49,
+            "Minor Defect": 11.02,
+            "Major Defect": 88.49
+          },
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-27",
+          "source_case_id": "TC-27",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Flaky",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Noisy"
+          },
+          "posterior": {
+            "Safe": 82.38,
+            "Minor Defect": 17.5,
+            "Major Defect": 0.12
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-28",
+          "source_case_id": "TC-28",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 98.67,
+            "Minor Defect": 1.33,
+            "Major Defect": 0.0
+          },
+          "action": "Request Human Review",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 2,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-29",
+          "source_case_id": "TC-29",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 61.69,
+            "Minor Defect": 36.99,
+            "Major Defect": 1.32
+          },
+          "action": "Request Human Review",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-30",
+          "source_case_id": "TC-30",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Mismatch",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 10.47,
+            "Minor Defect": 57.51,
+            "Major Defect": 32.02
+          },
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 8,
+          "is_error": true
+        }
+      ],
+      "confusion_matrix": {
+        "Safe": {
+          "Merge": 5,
+          "Request Human Review": 5,
+          "Decline / Block": 0
+        },
+        "Minor Defect": {
+          "Merge": 3,
+          "Request Human Review": 4,
+          "Decline / Block": 3
+        },
+        "Major Defect": {
+          "Merge": 0,
+          "Request Human Review": 7,
+          "Decline / Block": 3
+        }
+      },
+      "action_counts": {
+        "Merge": 8,
+        "Request Human Review": 16,
+        "Decline / Block": 6
+      },
+      "error_count": 18,
+      "human_review_rate": 0.5333,
+      "total_decision_cost": 92
+    },
+    "policy_a": {
+      "cases": [
+        {
+          "case_id": "V1-TC-01",
+          "source_case_id": "TC-01",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 99.33,
+            "Minor Defect": 0.67,
+            "Major Defect": 0.0
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-02",
+          "source_case_id": "TC-02",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 84.56,
+            "Minor Defect": 15.21,
+            "Major Defect": 0.23
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-03",
+          "source_case_id": "TC-03",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Mismatch",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 10.47,
+            "Minor Defect": 57.51,
+            "Major Defect": 32.02
+          },
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 8,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-04",
+          "source_case_id": "TC-04",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Flaky",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Noisy"
+          },
+          "posterior": {
+            "Safe": 81.85,
+            "Minor Defect": 17.49,
+            "Major Defect": 0.66
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-05",
+          "source_case_id": "TC-05",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Mismatch",
+            "ReviewLatency": "Long",
+            "RevertRate": "Low",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 7.71,
+            "Minor Defect": 51.82,
+            "Major Defect": 40.47
+          },
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 8,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-06",
+          "source_case_id": "TC-06",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 91.73,
+            "Minor Defect": 8.25,
+            "Major Defect": 0.02
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-07",
+          "source_case_id": "TC-07",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 86.86,
+            "Minor Defect": 13.02,
+            "Major Defect": 0.12
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-08",
+          "source_case_id": "TC-08",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 95.57,
+            "Minor Defect": 4.32,
+            "Major Defect": 0.1
+          },
+          "action": "Merge",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 120,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-09",
+          "source_case_id": "TC-09",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 97.37,
+            "Minor Defect": 2.63,
+            "Major Defect": 0.0
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-10",
+          "source_case_id": "TC-10",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 95.68,
+            "Minor Defect": 4.3,
+            "Major Defect": 0.02
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-11",
+          "source_case_id": "TC-11",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Flaky",
+            "AuthorDomain": "Mismatch",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 0.26,
+            "Minor Defect": 10.88,
+            "Major Defect": 88.86
+          },
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-12",
+          "source_case_id": "TC-12",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 98.67,
+            "Minor Defect": 1.33,
+            "Major Defect": 0.0
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-13",
+          "source_case_id": "TC-13",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Large",
+            "Sensitivity": "Low",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Noisy"
+          },
+          "posterior": {
+            "Safe": 29.69,
+            "Minor Defect": 53.73,
+            "Major Defect": 16.58
+          },
+          "action": "Request Human Review",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-14",
+          "source_case_id": "TC-14",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 61.69,
+            "Minor Defect": 36.99,
+            "Major Defect": 1.32
+          },
+          "action": "Merge",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 120,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-15",
+          "source_case_id": "TC-15",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Flaky",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Noisy"
+          },
+          "posterior": {
+            "Safe": 56.29,
+            "Minor Defect": 40.08,
+            "Major Defect": 3.63
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-16",
+          "source_case_id": "TC-16",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 99.33,
+            "Minor Defect": 0.67,
+            "Major Defect": 0.0
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-17",
+          "source_case_id": "TC-17",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Mismatch",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 40.39,
+            "Minor Defect": 55.49,
+            "Major Defect": 4.12
+          },
+          "action": "Merge",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 120,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-18",
+          "source_case_id": "TC-18",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 91.73,
+            "Minor Defect": 8.25,
+            "Major Defect": 0.02
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-19",
+          "source_case_id": "TC-19",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Long",
+            "RevertRate": "Low",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 64.92,
+            "Minor Defect": 33.31,
+            "Major Defect": 1.77
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-20",
+          "source_case_id": "TC-20",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 99.33,
+            "Minor Defect": 0.67,
+            "Major Defect": 0.0
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-21",
+          "source_case_id": "TC-21",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 1.47,
+            "Minor Defect": 27.6,
+            "Major Defect": 70.93
+          },
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-22",
+          "source_case_id": "TC-22",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Flaky",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Noisy"
+          },
+          "posterior": {
+            "Safe": 93.99,
+            "Minor Defect": 5.99,
+            "Major Defect": 0.02
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-23",
+          "source_case_id": "TC-23",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Mismatch",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 10.47,
+            "Minor Defect": 57.51,
+            "Major Defect": 32.02
+          },
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 8,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-24",
+          "source_case_id": "TC-24",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 97.8,
+            "Minor Defect": 2.2,
+            "Major Defect": 0.0
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-25",
+          "source_case_id": "TC-25",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 94.84,
+            "Minor Defect": 5.12,
+            "Major Defect": 0.04
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-26",
+          "source_case_id": "TC-26",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 0.49,
+            "Minor Defect": 11.02,
+            "Major Defect": 88.49
+          },
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-27",
+          "source_case_id": "TC-27",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Flaky",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Noisy"
+          },
+          "posterior": {
+            "Safe": 82.38,
+            "Minor Defect": 17.5,
+            "Major Defect": 0.12
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-28",
+          "source_case_id": "TC-28",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 98.67,
+            "Minor Defect": 1.33,
+            "Major Defect": 0.0
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-29",
+          "source_case_id": "TC-29",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 61.69,
+            "Minor Defect": 36.99,
+            "Major Defect": 1.32
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-30",
+          "source_case_id": "TC-30",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Mismatch",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 10.47,
+            "Minor Defect": 57.51,
+            "Major Defect": 32.02
+          },
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 8,
+          "is_error": true
+        }
+      ],
+      "confusion_matrix": {
+        "Safe": {
+          "Merge": 10,
+          "Request Human Review": 0,
+          "Decline / Block": 0
+        },
+        "Minor Defect": {
+          "Merge": 9,
+          "Request Human Review": 1,
+          "Decline / Block": 0
+        },
+        "Major Defect": {
+          "Merge": 3,
+          "Request Human Review": 4,
+          "Decline / Block": 3
+        }
+      },
+      "action_counts": {
+        "Merge": 22,
+        "Request Human Review": 5,
+        "Decline / Block": 3
+      },
+      "error_count": 16,
+      "human_review_rate": 0.1667,
+      "total_decision_cost": 421
+    },
+    "policy_b": {
+      "cases": [
+        {
+          "case_id": "V1-TC-01",
+          "source_case_id": "TC-01",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 99.33,
+            "Minor Defect": 0.67,
+            "Major Defect": 0.0
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-02",
+          "source_case_id": "TC-02",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 84.56,
+            "Minor Defect": 15.21,
+            "Major Defect": 0.23
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-03",
+          "source_case_id": "TC-03",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Mismatch",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 10.47,
+            "Minor Defect": 57.51,
+            "Major Defect": 32.02
+          },
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-04",
+          "source_case_id": "TC-04",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Flaky",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Noisy"
+          },
+          "posterior": {
+            "Safe": 81.85,
+            "Minor Defect": 17.49,
+            "Major Defect": 0.66
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-05",
+          "source_case_id": "TC-05",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Mismatch",
+            "ReviewLatency": "Long",
+            "RevertRate": "Low",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 7.71,
+            "Minor Defect": 51.82,
+            "Major Defect": 40.47
+          },
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-06",
+          "source_case_id": "TC-06",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 91.73,
+            "Minor Defect": 8.25,
+            "Major Defect": 0.02
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-07",
+          "source_case_id": "TC-07",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 86.86,
+            "Minor Defect": 13.02,
+            "Major Defect": 0.12
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-08",
+          "source_case_id": "TC-08",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 95.57,
+            "Minor Defect": 4.32,
+            "Major Defect": 0.1
+          },
+          "action": "Merge",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 120,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-09",
+          "source_case_id": "TC-09",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 97.37,
+            "Minor Defect": 2.63,
+            "Major Defect": 0.0
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-10",
+          "source_case_id": "TC-10",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 95.68,
+            "Minor Defect": 4.3,
+            "Major Defect": 0.02
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-11",
+          "source_case_id": "TC-11",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Flaky",
+            "AuthorDomain": "Mismatch",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 0.26,
+            "Minor Defect": 10.88,
+            "Major Defect": 88.86
+          },
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-12",
+          "source_case_id": "TC-12",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 98.67,
+            "Minor Defect": 1.33,
+            "Major Defect": 0.0
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-13",
+          "source_case_id": "TC-13",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Large",
+            "Sensitivity": "Low",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Noisy"
+          },
+          "posterior": {
+            "Safe": 29.69,
+            "Minor Defect": 53.73,
+            "Major Defect": 16.58
+          },
+          "action": "Request Human Review",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-14",
+          "source_case_id": "TC-14",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 61.69,
+            "Minor Defect": 36.99,
+            "Major Defect": 1.32
+          },
+          "action": "Merge",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 120,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-15",
+          "source_case_id": "TC-15",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Flaky",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Noisy"
+          },
+          "posterior": {
+            "Safe": 56.29,
+            "Minor Defect": 40.08,
+            "Major Defect": 3.63
+          },
+          "action": "Request Human Review",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 2,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-16",
+          "source_case_id": "TC-16",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 99.33,
+            "Minor Defect": 0.67,
+            "Major Defect": 0.0
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-17",
+          "source_case_id": "TC-17",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Mismatch",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 40.39,
+            "Minor Defect": 55.49,
+            "Major Defect": 4.12
+          },
+          "action": "Request Human Review",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 8,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-18",
+          "source_case_id": "TC-18",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 91.73,
+            "Minor Defect": 8.25,
+            "Major Defect": 0.02
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-19",
+          "source_case_id": "TC-19",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Long",
+            "RevertRate": "Low",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 64.92,
+            "Minor Defect": 33.31,
+            "Major Defect": 1.77
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-20",
+          "source_case_id": "TC-20",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 99.33,
+            "Minor Defect": 0.67,
+            "Major Defect": 0.0
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-21",
+          "source_case_id": "TC-21",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 1.47,
+            "Minor Defect": 27.6,
+            "Major Defect": 70.93
+          },
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-22",
+          "source_case_id": "TC-22",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Flaky",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Noisy"
+          },
+          "posterior": {
+            "Safe": 93.99,
+            "Minor Defect": 5.99,
+            "Major Defect": 0.02
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-23",
+          "source_case_id": "TC-23",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Mismatch",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 10.47,
+            "Minor Defect": 57.51,
+            "Major Defect": 32.02
+          },
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-24",
+          "source_case_id": "TC-24",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 97.8,
+            "Minor Defect": 2.2,
+            "Major Defect": 0.0
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-25",
+          "source_case_id": "TC-25",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 94.84,
+            "Minor Defect": 5.12,
+            "Major Defect": 0.04
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-26",
+          "source_case_id": "TC-26",
+          "evidence": {
+            "CI": "Fail",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 0.49,
+            "Minor Defect": 11.02,
+            "Major Defect": 88.49
+          },
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-27",
+          "source_case_id": "TC-27",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "Low",
+            "Author": "High",
+            "CIReliability": "Flaky",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Noisy"
+          },
+          "posterior": {
+            "Safe": 82.38,
+            "Minor Defect": 17.5,
+            "Major Defect": 0.12
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-28",
+          "source_case_id": "TC-28",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Small",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Clean"
+          },
+          "posterior": {
+            "Safe": 98.67,
+            "Minor Defect": 1.33,
+            "Major Defect": 0.0
+          },
+          "action": "Merge",
+          "actual_state": "Safe",
+          "expected_action": "Merge",
+          "decision_cost": 0,
+          "is_error": false
+        },
+        {
+          "case_id": "V1-TC-29",
+          "source_case_id": "TC-29",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Medium",
+            "Sensitivity": "High",
+            "Author": "Low",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Match",
+            "ReviewLatency": "Short",
+            "RevertRate": "Low",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 61.69,
+            "Minor Defect": 36.99,
+            "Major Defect": 1.32
+          },
+          "action": "Merge",
+          "actual_state": "Minor Defect",
+          "expected_action": "Request Human Review",
+          "decision_cost": 3,
+          "is_error": true
+        },
+        {
+          "case_id": "V1-TC-30",
+          "source_case_id": "TC-30",
+          "evidence": {
+            "CI": "Pass",
+            "Scope": "Large",
+            "Sensitivity": "High",
+            "Author": "High",
+            "CIReliability": "Stable",
+            "AuthorDomain": "Mismatch",
+            "ReviewLatency": "Long",
+            "RevertRate": "High",
+            "ReviewComments": "Actionable"
+          },
+          "posterior": {
+            "Safe": 10.47,
+            "Minor Defect": 57.51,
+            "Major Defect": 32.02
+          },
+          "action": "Decline / Block",
+          "actual_state": "Major Defect",
+          "expected_action": "Decline / Block",
+          "decision_cost": 0,
+          "is_error": false
+        }
+      ],
+      "confusion_matrix": {
+        "Safe": {
+          "Merge": 10,
+          "Request Human Review": 0,
+          "Decline / Block": 0
+        },
+        "Minor Defect": {
+          "Merge": 8,
+          "Request Human Review": 2,
+          "Decline / Block": 0
+        },
+        "Major Defect": {
+          "Merge": 2,
+          "Request Human Review": 1,
+          "Decline / Block": 7
+        }
+      },
+      "action_counts": {
+        "Merge": 20,
+        "Request Human Review": 3,
+        "Decline / Block": 7
+      },
+      "error_count": 11,
+      "human_review_rate": 0.1,
+      "total_decision_cost": 276
+    }
+  }
+}

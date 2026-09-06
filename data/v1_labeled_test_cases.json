@@ -1,0 +1,542 @@
+[
+  {
+    "case_id": "V1-TC-01",
+    "source_case_id": "TC-01",
+    "description": "Small UI bug fix by a trusted author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Small",
+      "Sensitivity": "Low",
+      "Author": "High",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Clean"
+    },
+    "actual_state": "Safe",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-02",
+    "source_case_id": "TC-02",
+    "description": "Small payment configuration edit by a new author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Small",
+      "Sensitivity": "High",
+      "Author": "Low",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Actionable"
+    },
+    "actual_state": "Minor Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-03",
+    "source_case_id": "TC-03",
+    "description": "Large authentication refactor by a trusted author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Large",
+      "Sensitivity": "High",
+      "Author": "High",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Mismatch",
+      "ReviewLatency": "Long",
+      "RevertRate": "High",
+      "ReviewComments": "Actionable"
+    },
+    "actual_state": "Major Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-04",
+    "source_case_id": "TC-04",
+    "description": "Small UI style change with failing CI",
+    "evidence": {
+      "CI": "Fail",
+      "Scope": "Small",
+      "Sensitivity": "Low",
+      "Author": "High",
+      "CIReliability": "Flaky",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Noisy"
+    },
+    "actual_state": "Minor Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-05",
+    "source_case_id": "TC-05",
+    "description": "Large database migration by a new author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Large",
+      "Sensitivity": "High",
+      "Author": "Low",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Mismatch",
+      "ReviewLatency": "Long",
+      "RevertRate": "Low",
+      "ReviewComments": "Actionable"
+    },
+    "actual_state": "Major Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-06",
+    "source_case_id": "TC-06",
+    "description": "Medium documentation update by a new author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Medium",
+      "Sensitivity": "Low",
+      "Author": "Low",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Clean"
+    },
+    "actual_state": "Safe",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-07",
+    "source_case_id": "TC-07",
+    "description": "Medium payment API fix by a trusted author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Medium",
+      "Sensitivity": "High",
+      "Author": "High",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Actionable"
+    },
+    "actual_state": "Minor Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-08",
+    "source_case_id": "TC-08",
+    "description": "Small authentication patch with failing CI",
+    "evidence": {
+      "CI": "Fail",
+      "Scope": "Small",
+      "Sensitivity": "High",
+      "Author": "High",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Clean"
+    },
+    "actual_state": "Major Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-09",
+    "source_case_id": "TC-09",
+    "description": "Large UI feature by a trusted author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Large",
+      "Sensitivity": "Low",
+      "Author": "High",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Clean"
+    },
+    "actual_state": "Safe",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-10",
+    "source_case_id": "TC-10",
+    "description": "Medium database migration by a trusted author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Medium",
+      "Sensitivity": "High",
+      "Author": "High",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Clean"
+    },
+    "actual_state": "Safe",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-11",
+    "source_case_id": "TC-11",
+    "description": "Large authentication PR by a new author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Large",
+      "Sensitivity": "High",
+      "Author": "Low",
+      "CIReliability": "Flaky",
+      "AuthorDomain": "Mismatch",
+      "ReviewLatency": "Long",
+      "RevertRate": "High",
+      "ReviewComments": "Actionable"
+    },
+    "actual_state": "Major Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-12",
+    "source_case_id": "TC-12",
+    "description": "Small billing configuration fix by a trusted author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Small",
+      "Sensitivity": "High",
+      "Author": "High",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Clean"
+    },
+    "actual_state": "Safe",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-13",
+    "source_case_id": "TC-13",
+    "description": "Large UI refactor by a new author with failing CI",
+    "evidence": {
+      "CI": "Fail",
+      "Scope": "Large",
+      "Sensitivity": "Low",
+      "Author": "Low",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Noisy"
+    },
+    "actual_state": "Minor Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-14",
+    "source_case_id": "TC-14",
+    "description": "Medium authentication change by a new author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Medium",
+      "Sensitivity": "High",
+      "Author": "Low",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Actionable"
+    },
+    "actual_state": "Major Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-15",
+    "source_case_id": "TC-15",
+    "description": "Medium non-critical refactor by a trusted author with failing CI",
+    "evidence": {
+      "CI": "Fail",
+      "Scope": "Medium",
+      "Sensitivity": "Low",
+      "Author": "High",
+      "CIReliability": "Flaky",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Noisy"
+    },
+    "actual_state": "Minor Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-16",
+    "source_case_id": "TC-16",
+    "description": "Small README correction by a trusted author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Small",
+      "Sensitivity": "Low",
+      "Author": "High",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Clean"
+    },
+    "actual_state": "Safe",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-17",
+    "source_case_id": "TC-17",
+    "description": "Small secret-handling change by a trusted author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Small",
+      "Sensitivity": "High",
+      "Author": "High",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Mismatch",
+      "ReviewLatency": "Long",
+      "RevertRate": "High",
+      "ReviewComments": "Actionable"
+    },
+    "actual_state": "Major Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-18",
+    "source_case_id": "TC-18",
+    "description": "Medium test-only change by a new author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Medium",
+      "Sensitivity": "Low",
+      "Author": "Low",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Clean"
+    },
+    "actual_state": "Minor Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-19",
+    "source_case_id": "TC-19",
+    "description": "Large payment feature by a trusted author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Large",
+      "Sensitivity": "High",
+      "Author": "High",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Long",
+      "RevertRate": "Low",
+      "ReviewComments": "Actionable"
+    },
+    "actual_state": "Minor Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-20",
+    "source_case_id": "TC-20",
+    "description": "Small dependency update by a trusted author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Small",
+      "Sensitivity": "Low",
+      "Author": "High",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Clean"
+    },
+    "actual_state": "Safe",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-21",
+    "source_case_id": "TC-21",
+    "description": "Medium database query change by a new author with failing CI",
+    "evidence": {
+      "CI": "Fail",
+      "Scope": "Medium",
+      "Sensitivity": "High",
+      "Author": "Low",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Long",
+      "RevertRate": "High",
+      "ReviewComments": "Actionable"
+    },
+    "actual_state": "Major Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-22",
+    "source_case_id": "TC-22",
+    "description": "Small logging change by a trusted author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Small",
+      "Sensitivity": "Low",
+      "Author": "High",
+      "CIReliability": "Flaky",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Noisy"
+    },
+    "actual_state": "Minor Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-23",
+    "source_case_id": "TC-23",
+    "description": "Large infrastructure change by a trusted author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Large",
+      "Sensitivity": "High",
+      "Author": "High",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Mismatch",
+      "ReviewLatency": "Long",
+      "RevertRate": "High",
+      "ReviewComments": "Actionable"
+    },
+    "actual_state": "Major Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-24",
+    "source_case_id": "TC-24",
+    "description": "Medium UI redesign by a trusted author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Medium",
+      "Sensitivity": "Low",
+      "Author": "High",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Clean"
+    },
+    "actual_state": "Safe",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-25",
+    "source_case_id": "TC-25",
+    "description": "Small authentication documentation change by a new author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Small",
+      "Sensitivity": "High",
+      "Author": "Low",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Clean"
+    },
+    "actual_state": "Safe",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-26",
+    "source_case_id": "TC-26",
+    "description": "Large API redesign by a new author with failing CI",
+    "evidence": {
+      "CI": "Fail",
+      "Scope": "Large",
+      "Sensitivity": "High",
+      "Author": "Low",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Long",
+      "RevertRate": "High",
+      "ReviewComments": "Actionable"
+    },
+    "actual_state": "Major Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-27",
+    "source_case_id": "TC-27",
+    "description": "Medium configuration cleanup by a trusted author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Medium",
+      "Sensitivity": "Low",
+      "Author": "High",
+      "CIReliability": "Flaky",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Noisy"
+    },
+    "actual_state": "Minor Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-28",
+    "source_case_id": "TC-28",
+    "description": "Small payment test change by a trusted author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Small",
+      "Sensitivity": "High",
+      "Author": "High",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Clean"
+    },
+    "actual_state": "Safe",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-29",
+    "source_case_id": "TC-29",
+    "description": "Medium authorization logic change by a new author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Medium",
+      "Sensitivity": "High",
+      "Author": "Low",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Match",
+      "ReviewLatency": "Short",
+      "RevertRate": "Low",
+      "ReviewComments": "Actionable"
+    },
+    "actual_state": "Minor Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  },
+  {
+    "case_id": "V1-TC-30",
+    "source_case_id": "TC-30",
+    "description": "Large data deletion change by a trusted author with passing CI",
+    "evidence": {
+      "CI": "Pass",
+      "Scope": "Large",
+      "Sensitivity": "High",
+      "Author": "High",
+      "CIReliability": "Stable",
+      "AuthorDomain": "Mismatch",
+      "ReviewLatency": "Long",
+      "RevertRate": "High",
+      "ReviewComments": "Actionable"
+    },
+    "actual_state": "Major Defect",
+    "label_source": "Inherited synthetic scenario label from V0"
+  }
+]

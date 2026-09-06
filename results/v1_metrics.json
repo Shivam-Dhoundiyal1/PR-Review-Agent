@@ -1,0 +1,132 @@
+{
+  "dataset": "synthetic-pr-review-v1-expanded",
+  "case_count": 30,
+  "model_version": "bayesian-pr-agent-v1",
+  "cost_matrix": {
+    "Merge": {
+      "Safe": 0,
+      "Minor Defect": 3,
+      "Major Defect": 120
+    },
+    "Request Human Review": {
+      "Safe": 2,
+      "Minor Defect": 2,
+      "Major Defect": 8
+    },
+    "Decline / Block": {
+      "Safe": 6,
+      "Minor Defect": 3,
+      "Major Defect": 0
+    }
+  },
+  "policies": {
+    "baseline": {
+      "binary_definition": {
+        "positive_actual": "Minor Defect or Major Defect",
+        "positive_prediction": "Request Human Review or Decline / Block"
+      },
+      "confusion_matrix": {
+        "Safe": {
+          "Merge": 5,
+          "Request Human Review": 5,
+          "Decline / Block": 0
+        },
+        "Minor Defect": {
+          "Merge": 3,
+          "Request Human Review": 4,
+          "Decline / Block": 3
+        },
+        "Major Defect": {
+          "Merge": 0,
+          "Request Human Review": 7,
+          "Decline / Block": 3
+        }
+      },
+      "binary_confusion_matrix": {
+        "true_positive": 17,
+        "true_negative": 5,
+        "false_positive": 5,
+        "false_negative": 3
+      },
+      "precision_unsafe": 0.7727,
+      "recall_unsafe": 0.85,
+      "false_positive_quantity": 5,
+      "false_negative_quantity": 3,
+      "human_review_rate": 0.5333,
+      "total_decision_cost": 92,
+      "major_defect_brier_score": 0.159045
+    },
+    "policy_a": {
+      "binary_definition": {
+        "positive_actual": "Minor Defect or Major Defect",
+        "positive_prediction": "Request Human Review or Decline / Block"
+      },
+      "confusion_matrix": {
+        "Safe": {
+          "Merge": 10,
+          "Request Human Review": 0,
+          "Decline / Block": 0
+        },
+        "Minor Defect": {
+          "Merge": 9,
+          "Request Human Review": 1,
+          "Decline / Block": 0
+        },
+        "Major Defect": {
+          "Merge": 3,
+          "Request Human Review": 4,
+          "Decline / Block": 3
+        }
+      },
+      "binary_confusion_matrix": {
+        "true_positive": 8,
+        "true_negative": 10,
+        "false_positive": 0,
+        "false_negative": 12
+      },
+      "precision_unsafe": 1.0,
+      "recall_unsafe": 0.4,
+      "false_positive_quantity": 0,
+      "false_negative_quantity": 12,
+      "human_review_rate": 0.1667,
+      "total_decision_cost": 421,
+      "major_defect_brier_score": 0.159045
+    },
+    "policy_b": {
+      "binary_definition": {
+        "positive_actual": "Minor Defect or Major Defect",
+        "positive_prediction": "Request Human Review or Decline / Block"
+      },
+      "confusion_matrix": {
+        "Safe": {
+          "Merge": 10,
+          "Request Human Review": 0,
+          "Decline / Block": 0
+        },
+        "Minor Defect": {
+          "Merge": 8,
+          "Request Human Review": 2,
+          "Decline / Block": 0
+        },
+        "Major Defect": {
+          "Merge": 2,
+          "Request Human Review": 1,
+          "Decline / Block": 7
+        }
+      },
+      "binary_confusion_matrix": {
+        "true_positive": 10,
+        "true_negative": 10,
+        "false_positive": 0,
+        "false_negative": 10
+      },
+      "precision_unsafe": 1.0,
+      "recall_unsafe": 0.5,
+      "false_positive_quantity": 0,
+      "false_negative_quantity": 10,
+      "human_review_rate": 0.1,
+      "total_decision_cost": 276,
+      "major_defect_brier_score": 0.159045
+    }
+  }
+}
