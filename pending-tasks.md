@@ -14,7 +14,8 @@ This file tracks the remaining work for the project. Complete the tasks in order
 - A probability decision record exists.
 - Fifteen synthetic test cases exist in `data/test_cases.md`.
 - Thirty-five fetched PR records exist in `data/real_pr_test_cases.json`.
-- Four Reddit discussion entries are recorded in `discussion-record.md`.
+- Reddit and X discussion evidence is recorded in `discussion-record.md`; no further discussion collection is planned.
+- V1 has a separate expanded dataset, evaluation, metrics, and failure analysis.
 
 ### Important limitation
 
@@ -24,17 +25,17 @@ The fetched dataset currently labels cases as `Merged` or `Closed_Without_Merge`
 
 | Requirement | Current status | Required update |
 | :--- | :--- | :--- |
-| One specific problem statement | Partially complete | State the final problem as: “The agent observes PR evidence and selects merge, human review, or block because the true defect state is hidden.” |
-| Agent design | Partially complete | Add the final input schema, hidden states, actions, human reasoning function, feedback, and conditions for asking a human. |
-| Public discussions | Incomplete | Add one more verified community, the second contribution for every community, five discussions with two or more replies, and dates or screenshots/archives where needed. |
-| Design updates from discussions | Unverified | For each accepted suggestion, link the exact human response and name the corresponding code, data, or policy change. Record rejected suggestions and reasons too. |
-| Test cases | Partially complete | The repository has 15 synthetic cases and 35 fetched PR records. Confirm the labels and split; the fetched `actual_outcome` is merge/closed, not the hidden defect state needed to evaluate defect detection. |
-| Hidden actual result | Missing | Add a defensible `actual_state` label such as Safe, Minor Defect, or Major Defect, using documented human labels or a reproducible proxy. Keep labels unavailable to the decision function until evaluation. |
-| Baseline and two policies | Partially complete | The code defines a rule baseline, Bayesian Policy A, and cautious Policy B. Document what each policy tests and evaluate all three on the same labeled cases. |
-| Metrics | Missing | Calculate confusion matrix, precision, recall, false-positive and false-negative quantities, human-review rate, decision cost, and calibration where labels support them. |
-| Five wrong decisions | Missing | Select five misclassified cases, give each a failure-condition name, explain the cause, and calculate its cost. Identify the highest-cost error. |
-| Reproducibility | Missing | Add a script or notebook that saves per-case evidence, hidden label, posterior, actions for all three policies, costs, and aggregate metrics. Add exact run instructions to `README.md`. |
-| Probability decision record | Partially complete | Add the full posterior vector, audit metadata, source of estimates, and a second-evidence update with a new action. |
+| One specific problem statement | Complete | Final problem is stated in `README.md` and the probability decision record. |
+| Agent design | Partially complete | V0 is documented. Create the equivalent V1 flow design with expanded evidence gathering and the LLM/Bayesian boundary. |
+| Public discussions | Complete | Reddit and X evidence is recorded; no additional comments are planned. |
+| Design updates from discussions | Complete | Accepted, rejected, and deferred findings are recorded in `discussion-record.md`, `README.md`, and the probability decision record. |
+| Test cases | Complete for V0 and exploratory V1 | V0 uses `data/labeled_test_cases.json`; V1 uses `data/v1_labeled_test_cases.json` with inherited synthetic labels and expanded evidence. |
+| Hidden actual result | Complete with limitation | Both datasets keep `actual_state` for post-decision evaluation; V1 labels are inherited synthetic labels, not independent historical labels. |
+| Baseline and two policies | Complete for V0 and V1 | Baseline, Policy A, and Policy B are evaluated separately for both versions. |
+| Metrics | Complete for V0 and exploratory V1 | Confusion matrices, precision, recall, false positives, false negatives, review rate, decision cost, and Brier scores are saved in the V0 and V1 metrics files. |
+| Five wrong decisions | Complete for V0 and V1 | Analyses are saved in `results/failure-analysis.md` and `results/v1-failure-analysis.md`. |
+| Reproducibility | Partially complete | Add exact V0/V1 run commands and file descriptions to `README.md`, then run both from a clean state. |
+| Probability decision record | Complete for V0 and exploratory V1 | V1 evidence, provisional likelihoods, cost matrix, results, and limitations are recorded separately. |
 | AI reviews | Missing | Complete three reviews and record accepted/rejected comments, changes, and evidence in `review-record.md`. |
 | Preprint and publication | Missing | Create and compile the LaTeX paper, add references/figures, AI-use and contribution statements, and prepare the required LinkedIn and X materials. |
 
@@ -42,7 +43,7 @@ The fetched dataset currently labels cases as `Merged` or `Closed_Without_Merge`
 
 ### 1. Finalize the agent specification
 
-Status: Incomplete
+Status: Partially complete
 
 - Write the final one-sentence problem statement.
 - Define the observable input fields and allowed values.
@@ -50,7 +51,8 @@ Status: Incomplete
 - Define the three actions and the human-review condition.
 - Define what the agent remembers or learns after feedback.
 - Add one human-reasoning function, such as identifying uncertainty or sending high-cost cases to a human.
-- Resolve inconsistent thresholds and terminology across `README.md`, `src/main.py`, and the probability decision record.
+- Resolve any remaining inconsistent thresholds and terminology across the V0 and V1 documentation.
+- Create the V1 design flow image using the V0 design as the template.
 
 Output: Updated `README.md` and consistent code/design terminology.
 
@@ -125,32 +127,28 @@ Output: Completed `decisions/probability-decision-record.md`.
 
 ### 7. Complete real discussion evidence
 
-Status: Next
+Status: Complete
 
-- Verify the four existing Reddit entries.
-- Add at least one more relevant community.
-- Make two contributions in each selected community.
-- Complete at least five discussions with two or more human replies.
-- Add exact links, dates, human answers, and your follow-up answer.
-- Record whether each discussion caused a new assumption, failure condition, test, design change, or no change.
-- Do not invent human replies or claim a change that is not reflected in the code or design.
+- Reddit and X evidence has been added and recorded.
+- No additional discussion collection is planned.
+- Any unanswered or awaiting-response item remains clearly marked as incomplete rather than being treated as evidence.
 
 Output: Completed `discussion-record.md`.
 
 ### 8. Update the design using discussion findings
 
-Status: Partially complete
+Status: Complete for the documented V1 scope
 
 - Select the discussion findings that are relevant to the agent.
 - Accept or reject each finding with a reason.
-- Update the agent, probabilities, costs, test cases, or policy where justified.
+- Update the V1 agent, provisional probabilities, costs, and test cases where justified.
 - Record the before-and-after design change.
 
 Output: Evidence-linked design changes in `README.md` and `discussion-record.md`.
 
 ### 9. Complete AI review records
 
-Status: Missing
+Status: Next
 
 Complete three different reviews:
 
@@ -164,7 +162,7 @@ Output: Completed `review-record.md`.
 
 ### 10. Write and verify the preprint
 
-Status: Missing
+Status: Later
 
 - Create the IJCAI-style LaTeX paper.
 - Include the problem, related work, discussions, agent design, probability model, test method, results, failure analysis, limitations, ethics, and conclusion.
@@ -177,7 +175,7 @@ Output: `paper/main.tex`, `paper/references.bib`, figures, and `paper/preprint.p
 
 ### 11. Prepare publication materials
 
-Status: Missing
+Status: Later
 
 - Write one LinkedIn post containing the required result, design change, limitation, and request for comments.
 - Write the X thread containing the problem, test, result, and open question.
@@ -187,7 +185,7 @@ Output: `social/linkedin-post.md` and `social/x-thread.md`.
 
 ### 12. Final quality check
 
-Status: Not started
+Status: Later
 
 - Confirm one problem was used throughout the project.
 - Confirm no fabricated discussion, test, result, citation, or publication claim exists.
@@ -198,4 +196,4 @@ Status: Not started
 
 ## Recommended Next Task
 
-Start with Task 1: finalize the agent specification. Then create the labeled dataset in Task 2 before writing the evaluation metrics. Without hidden labels, the policy comparison and error-cost analysis cannot be valid.
+Create the V1 design flow image, then begin the three AI reviews. The first review should be a practitioner review of the agent workflow, V0/V1 separation, evidence contract, and failure analysis. Record each comment, decision, reason, resulting change, and evidence in `review-record.md`.
