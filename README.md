@@ -8,6 +8,10 @@ The agent observes pull-request evidence and selects **Merge**, **Request Human 
 
 The project tests whether Bayesian risk estimates and cost-sensitive decision thresholds can make safer PR decisions than a simple rule-based baseline. The agent is a decision system, not only a chatbot: it must select an action and record feedback about that action.
 
+### Intended users and ownership
+
+This project is designed for a repository maintainer or designated reviewer acting as the decision owner. The agent is a triage and risk-warning system: it recommends whether a PR should be merged, escalated for human review, or blocked, but it does not replace the human accountability of the reviewer or release owner. The benchmark evaluates the decision policy, not a fully autonomous deployment authority.
+
 ## 3. Design Versions
 
 ### Agent V0: Evaluated baseline design
