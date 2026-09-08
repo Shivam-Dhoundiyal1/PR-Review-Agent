@@ -47,17 +47,27 @@ The reviewer checked:
 
 ## 3. Preprint Review
 
-**Status:** Not started; the preprint has not yet been created.
+**Status:** Complete
+
+The preprint was reviewed against the saved V0 metrics, failure analysis, probability decision record, and the official IJCAI-ECAI 2026 author kit.
+
+| AI tool | Review comment | Accept or reject | Reason | Change | Evidence |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Gemini Spark | The abstract claimed that the best policy improved unsafe-case recall while lowering review load relative to the baseline. | Accept | The saved V0 metrics show Policy B recall at 70%, below the baseline's 85%, although Policy B has a lower review rate and fewer false positives. | Corrected the abstract to report the supported precision, recall, and review-load trade-off. | [results/metrics.json](results/metrics.json) |
+| Gemini Spark | The preprint should distinguish benchmark evidence from production evidence and avoid claiming IJCAI acceptance or submission. | Accept | The dataset, priors, likelihoods, thresholds, costs, and labels are synthetic or provisional. | Kept the synthetic-benchmark limitation, human-control language, and explicit statement that the paper is not an IJCAI submission. | [paper/main.tex](paper/main.tex); [decisions/probability-decision-record.md](decisions/probability-decision-record.md) |
+| Gemini Spark | The paper needs a reproducible method, failure analysis, limitations, ethics statement, AI-use statement, and contribution statement. | Accept | These are required for a credible course preprint and are supported by the project records. | Included the agent inputs, hidden states, actions, Bayes equations, evaluation definitions, result tables, five failure examples, limitations, ethics, AI-use, and contribution sections. | [paper/main.tex](paper/main.tex); [results/failure-analysis.md](results/failure-analysis.md) |
+
+The manuscript was compiled successfully with the official IJCAI style files. A final rebuild is still recommended after any layout edits, and the generated PDF should be visually inspected before publication.
 
 The reviewer will check this after the preprint exists:
 
-- Clear problem statement
-- New information
-- Correct methods
-- Test design
-- Baseline quality
-- Repeatable results
-- Limitations
-- Ethics
-- Claims without evidence
-- Questions for the next version
+- Clear problem statement: complete
+- New information: complete for the benchmark study
+- Correct methods: complete, with synthetic-data limitations stated
+- Test design: complete
+- Baseline quality: complete as a rule-based comparator
+- Repeatable results: complete in the manuscript, with a repository clean-run check still recommended
+- Limitations: complete
+- Ethics: complete
+- Claims without evidence: corrected during review
+- Questions for the next version: complete

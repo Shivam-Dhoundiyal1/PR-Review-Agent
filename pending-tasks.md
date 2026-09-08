@@ -36,8 +36,8 @@ The fetched dataset currently labels cases as `Merged` or `Closed_Without_Merge`
 | Five wrong decisions | Complete for V0 and V1 | Analyses are saved in `results/failure-analysis.md` and `results/v1-failure-analysis.md`. |
 | Reproducibility | Partially complete | Add exact V0/V1 run commands and file descriptions to `README.md`, then run both from a clean state. |
 | Probability decision record | Complete for V0 and exploratory V1 | V1 evidence, provisional likelihoods, cost matrix, results, and limitations are recorded separately. |
-| AI reviews | Missing | Complete three reviews and record accepted/rejected comments, changes, and evidence in `review-record.md`. |
-| Preprint and publication | Missing | Create and compile the LaTeX paper, add references/figures, AI-use and contribution statements, and prepare the required LinkedIn and X materials. |
+| AI reviews | Complete | Practitioner, probability/decision-cost, and preprint reviews are recorded in `review-record.md`. |
+| Preprint and publication | Preprint complete; publication materials pending | The IJCAI-style LaTeX paper, references, AI-use statement, contribution statement, and compiled PDF are complete. Social publication materials remain optional and should be prepared only after final inspection. |
 
 ## Priority Order
 
@@ -148,7 +148,7 @@ Output: Evidence-linked design changes in `README.md` and `discussion-record.md`
 
 ### 9. Complete AI review records
 
-Status: Next
+Status: Complete
 
 Complete three different reviews:
 
@@ -162,20 +162,20 @@ Output: Completed `review-record.md`.
 
 ### 10. Write and verify the preprint
 
-Status: Later
+Status: Complete for the preprint; publication materials remain pending
 
-- Create the IJCAI-style LaTeX paper.
+- Create the IJCAI-style LaTeX paper. **Complete.**
 - Include the problem, related work, discussions, agent design, probability model, test method, results, failure analysis, limitations, ethics, and conclusion.
 - Include at least one result table or figure.
 - Check every citation, equation, and reported result.
 - Add the AI-use statement and contribution statement.
-- Compile the PDF successfully.
+- Compile the PDF successfully. **Complete:** `paper/build/main.pdf`.
 
-Output: `paper/main.tex`, `paper/references.bib`, figures, and `paper/preprint.pdf`.
+Output: `paper/main.tex`, `paper/references.bib`, figures, and `paper/build/main.pdf`.
 
 ### 11. Prepare publication materials
 
-Status: Later
+Status: Pending
 
 - Write one LinkedIn post containing the required result, design change, limitation, and request for comments.
 - Write the X thread containing the problem, test, result, and open question.
@@ -196,4 +196,4 @@ Status: Later
 
 ## Recommended Next Task
 
-Create the V1 design flow image, then begin the three AI reviews. The first review should be a practitioner review of the agent workflow, V0/V1 separation, evidence contract, and failure analysis. Record each comment, decision, reason, resulting change, and evidence in `review-record.md`.
+Run the V0 and V1 experiments from a clean state, inspect the compiled PDF, and complete the final quality checklist. Publication posts are optional and should be prepared only after that verification.
