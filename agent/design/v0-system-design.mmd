@@ -1,0 +1,89 @@
+flowchart LR
+    classDef input fill:#111111,stroke:#d9d9d9,color:#ffffff;
+    classDef model fill:#1b1b1b,stroke:#d9d9d9,color:#ffffff;
+    classDef policy fill:#1f1f1f,stroke:#d9d9d9,color:#ffffff;
+    classDef eval fill:#1a1a1a,stroke:#f4d35e,color:#ffffff;
+    classDef output fill:#111111,stroke:#ffd166,color:#ffffff;
+    classDef hidden fill:#1b1b1b,stroke:#d9d9d9,color:#ffffff;
+
+    subgraph V0Inputs["Agent V0 inputs"]
+        CI["CI status\nPass / Fail"]
+        Scope["Diff scope\nSmall / Medium / Large"]
+        Sens["File sensitivity\nLow / High"]
+        Author["Author history\nHigh / Low"]
+    end
+
+    subgraph HiddenState["Hidden states"]
+        S1["Safe"]
+        S2["Minor Defect"]
+        S3["Major Defect"]
+    end
+
+    subgraph V0Model["Agent V0 Bayesian model"]
+        Prior["Priors\nS1=0.80, S2=0.15, S3=0.05"]
+        Likelihood["Likelihood tables\nP(E | S)"]
+        Posterior["Posterior\nP(S | E)"]
+    end
+
+    subgraph Policies["Policy layer"]
+        Baseline["Baseline\nBlock failed CI\nReview High / Large\nElse Merge"]
+        PolicyA["Policy A\nMerge < 8%\nReview 8%-45%\nBlock > 45%"]
+        PolicyB["Policy B\nMerge < 2%\nReview 2%-20%\nBlock > 20%"]
+    end
+
+    subgraph Eval["Evaluation and learning"]
+        Cases["Synthetic labeled cases\n30 cases"]
+        Metrics["Metrics\nPrecision, Recall, FP, FN, Review rate, Cost"]
+        Failure["Failure analysis"]
+    end
+
+    subgraph Output["Outputs"]
+        Action["Selected action\nMerge / Request Human Review / Decline / Block"]
+    end
+
+    CI --> Likelihood
+    Scope --> Likelihood
+    Sens --> Likelihood
+    Author --> Likelihood
+
+    Prior --> Posterior
+    Likelihood --> Posterior
+    Posterior --> PolicyA
+    Posterior --> PolicyB
+
+    CI --> Baseline
+    Scope --> Baseline
+    Sens --> Baseline
+    Author --> Baseline
+
+    Baseline --> Action
+    PolicyA --> Action
+    PolicyB --> Action
+
+    Cases -->|Evidence only| Baseline
+    Cases -->|Evidence only| PolicyA
+    Cases -->|Evidence only| PolicyB
+
+    Action --> Metrics
+    Cases -->|Actual hidden state revealed after action| Metrics
+    Metrics --> Failure
+
+    S1 -->|mutually exclusive states| Posterior
+    S2 -->|mutually exclusive states| Posterior
+    S3 -->|mutually exclusive states| Posterior
+
+    class CI,Scope,Sens,Author input;
+    class Prior,Likelihood,Posterior model;
+    class Baseline,PolicyA,PolicyB policy;
+    class Cases,Metrics,Failure eval;
+    class Action output;
+    class S1,S2,S3 hidden;
+
+    style V0Inputs fill:#111111,stroke:#d9d9d9,color:#ffffff,stroke-width:2px;
+    style HiddenState fill:#111111,stroke:#d9d9d9,color:#ffffff,stroke-width:2px;
+    style V0Model fill:#111111,stroke:#d9d9d9,color:#ffffff,stroke-width:2px;
+    style Policies fill:#111111,stroke:#d9d9d9,color:#ffffff,stroke-width:2px;
+    style Eval fill:#111111,stroke:#f4d35e,color:#ffffff,stroke-width:2px;
+    style Output fill:#111111,stroke:#ffd166,color:#ffffff,stroke-width:2px;
+
+    linkStyle default stroke:#d9d9d9,stroke-width:2px;
