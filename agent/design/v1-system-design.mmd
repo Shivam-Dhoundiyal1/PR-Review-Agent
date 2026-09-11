@@ -1,9 +1,10 @@
+%%{init: {'theme':'base', 'themeVariables': { 'fontFamily': 'Segoe UI, Arial', 'fontSize': '18px', 'primaryTextColor': '#ffffff', 'lineColor': '#f0f0f0', 'primaryBorderColor': '#f0f0f0', 'tertiaryColor': '#0d0d0d', 'background': '#000000'}}}%%
 flowchart LR
-    classDef v0 fill:#111111,stroke:#d9d9d9,color:#ffffff;
-    classDef v1 fill:#1b1b1b,stroke:#d9d9d9,color:#ffffff;
-    classDef hidden fill:#1b1b1b,stroke:#d9d9d9,color:#ffffff;
-    classDef policy fill:#1f1f1f,stroke:#d9d9d9,color:#ffffff;
-    classDef eval fill:#1a1a1a,stroke:#f4d35e,color:#ffffff;
+    classDef v0 fill:#0d0d0d,stroke:#f0f0f0,color:#ffffff,stroke-width:2px;
+    classDef v1 fill:#0d0d0d,stroke:#d9d9d9,color:#ffffff,stroke-width:2px;
+    classDef hidden fill:#10263d,stroke:#ffffff,color:#ffffff,stroke-width:2px;
+    classDef policy fill:#0d0d0d,stroke:#d9d9d9,color:#ffffff,stroke-width:2px;
+    classDef eval fill:#0d0d0d,stroke:#f4d35e,color:#ffffff,stroke-width:2px;
 
     subgraph V0Core["V0 benchmark core (unchanged)"]
         V0Inputs["V0 evidence\nCI, Scope, Sensitivity, Author"]
@@ -25,10 +26,11 @@ flowchart LR
         V1Posterior["Posterior distribution\nP(Safe), P(Minor), P(Major)"]
     end
 
-    subgraph Hidden["Hidden states"]
-        H1["Safe"]
-        H2["Minor Defect"]
-        H3["Major Defect"]
+    subgraph Hidden["Hidden states (explicitly visible)"]
+        direction TB
+        H1["Safe\n(latent state)"]
+        H2["Minor Defect\n(latent state)"]
+        H3["Major Defect\n(latent state)"]
     end
 
     subgraph Policies["Decision policies"]
@@ -60,9 +62,9 @@ flowchart LR
     V1Evidence --> V1Likelihood
     V1Likelihood --> V1Posterior
 
-    H1 -->|mutually exclusive states| V1Posterior
-    H2 -->|mutually exclusive states| V1Posterior
-    H3 -->|mutually exclusive states| V1Posterior
+    H1 -->|latent state| V1Posterior
+    H2 -->|latent state| V1Posterior
+    H3 -->|latent state| V1Posterior
 
     V1Posterior --> PolicyA
     V1Posterior --> PolicyB
@@ -89,12 +91,12 @@ flowchart LR
     class V1Cases,V1Metrics,V1Failure eval;
     class FinalAction eval;
 
-    style V0Core fill:#111111,stroke:#d9d9d9,color:#ffffff,stroke-width:2px;
-    style V1Extensions fill:#111111,stroke:#d9d9d9,color:#ffffff,stroke-width:2px;
-    style V1Model fill:#111111,stroke:#d9d9d9,color:#ffffff,stroke-width:2px;
-    style Hidden fill:#111111,stroke:#d9d9d9,color:#ffffff,stroke-width:2px;
-    style Policies fill:#111111,stroke:#d9d9d9,color:#ffffff,stroke-width:2px;
-    style Eval fill:#111111,stroke:#f4d35e,color:#ffffff,stroke-width:2px;
-    style Output fill:#111111,stroke:#ffd166,color:#ffffff,stroke-width:2px;
+    style V0Core fill:#0d0d0d,stroke:#f0f0f0,color:#ffffff,stroke-width:2px;
+    style V1Extensions fill:#0d0d0d,stroke:#f0f0f0,color:#ffffff,stroke-width:2px;
+    style V1Model fill:#0d0d0d,stroke:#d9d9d9,color:#ffffff,stroke-width:2px;
+    style Hidden fill:#0d0d0d,stroke:#ffffff,color:#ffffff,stroke-width:2px;
+    style Policies fill:#0d0d0d,stroke:#d9d9d9,color:#ffffff,stroke-width:2px;
+    style Eval fill:#0d0d0d,stroke:#f4d35e,color:#ffffff,stroke-width:2px;
+    style Output fill:#0d0d0d,stroke:#ffd166,color:#ffffff,stroke-width:2px;
 
-    linkStyle default stroke:#d9d9d9,stroke-width:2px;
+    linkStyle default stroke:#eeeeee,stroke-width:2px;
